@@ -1,0 +1,70 @@
+:root{
+    --netflix-color: #fff;
+    --netflix-font-p: 'Source Sans 3';
+    --netflix-font-h1: 'Roboto';
+}
+
+*,
+*::before,
+*::after{
+    box-sizing: border-box; /* Fixees layout shifting */
+}
+
+body{
+    background-color: #141414;
+}
+
+.profile-gate{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+h1{
+    color: var(--netflix-color);
+    font-family: var(--netflix-font-h1);
+    font-weight: 400;
+    font-size: 2.5rem;
+    text-align: center;
+}
+
+.list-profiles{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 1.9rem;
+    gap: 5rem;
+}
+
+.user-profile a{
+    text-decoration: none;
+}
+
+.user-profile img {
+    width: 10em;
+    height: auto;
+    border-radius: 6px;
+    object-fit: cover;
+    overflow: hidden;
+}
+
+.user-profile img:hover,
+.user-profile img:focus {
+    border: 3px solid #fff;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out ;
+}
+
+.user-profile img:hover{
+    transform: scale(1.05);
+}
+
+.list-profiles p{
+    font-family: var(--netflix-font-p);
+    color: var(--netflix-color);
+    text-align: center;
+}
+

@@ -1,0 +1,69 @@
+:root{
+    --netflx-font-p: 'Source Sans 3';
+    --netflx-font-h1: 'Roboto';
+    --netflx-col: #fff;
+}
+
+
+body {
+    background-image:
+        linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.2)),
+        url('../images/netflix-background.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+}
+
+.hero {
+    display: flex;
+    justify-content: center;
+    align-items:  center;
+    height: 100vh;
+}
+
+h1 {
+    font-family: var(--netflx-font-h1);
+    font-size: 3.5rem;
+    color: var(--netflx-col);
+    padding: 0 2rem;
+}
+
+p {
+    font-family: var(--netflx-font-p);
+    color: var(--netflx-col);
+}
+
+.email-form {
+    display: flex ;
+    flex-direction: row;
+    justify-content: center;
+    height: 44px;
+    gap: .1rem;
+    width: 90%;
+}
+
+.email-form input{
+    flex-grow: 3;
+    padding: 0 0 0 0.5rem;
+}
+
+.email-form button{
+    flex-grow: 1;
+    background-color: red;
+    color: var(--netflx-col);
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    padding: 0 1rem;
+}
+
+.email-form button:hover {
+    background-color: #f6121d;
+}
+
+.hero-content {
+    max-width: 800px;
+    text-align: center;
+    padding: 0 1rem;
+}
