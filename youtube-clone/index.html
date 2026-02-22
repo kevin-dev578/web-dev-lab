@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube Clone</title>
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="./images/youtube-168-svgrepo-com.svg" type="image/x-icon">
+    <!-- CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <!-- Normalise css-->
+    <link rel="stylesheet" href="./css/index.css">
+    <!-- Javascript -->
+    <script type="module" src="./js/index.js"></script>
+</head>
+
+<body>
+    <!-- Top Navigation -->
+    <header>
+        <div class="logo">
+            <img src="./images/youtube-168-svgrepo-com.svg" alt="Youtube logo" width="50" height="50">
+            <h1>Youtube Clone</h1>
+        </div>
+        <div class="search-bar">
+            <input type="text" placeholder="Search" id="searchInput">
+            <button aria-label="Search" title="Search" id="searchBtn"><img src="./images/search-svgrepo-com.svg" alt="a search button"
+                    width="30" height="30"></button>
+        </div>
+        <div class="header-icons">
+            <div class="toggle-display">
+                <button aria-label="Apps" title="Toggle View">
+                    <img src="./images/apps-svgrepo-com.svg" alt="Toggle view" width="30" height="30">
+                </button>
+            </div>
+            <div class="notifications">
+                <button aria-label="Notifications" title="Notifications">
+                    <img src="./images/bell-alt-svgrepo-com.svg" alt="Notifications" width="30" height="30">
+                </button>
+            </div>
+        </div>
+
+
+    </header>
+
+    <!-- Sidebar -->
+    <div class="sidebar-video">
+
+        <div class="sidebar">
+            <aside>
+                <nav>
+                    <ul>
+                        <li>
+                            <div class="nav-item">
+                                <a href="index.html" aria-current="page" class="current-page">
+                                    <img src="./images/home-svgrepo-com.svg" alt="Home icon" width="30" height="30">
+                                    <span>Home</span>
+                                </a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="nav-item">
+                                <a href="trending.html">
+                                    <img src="./images/trending-up-svgrepo-com.svg" alt="Trending icon" width="30"
+                                        height="30">
+                                    <span>Trending</span>
+                                </a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="nav-item">
+                                <a href="subscriptions.html">
+                                    <img src="./images/subscriptions-svgrepo-com.svg" alt="Subscriptions icon"
+                                        width="30" height="30">
+                                    <span>Subscriptions</span>
+                                </a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="nav-item">
+                                <a href="library.html">
+                                    <img src="./images/library-svgrepo-com.svg" alt="Library icon" width="30"
+                                        height="30">
+                                    <span>Library</span>
+                                </a>
+                            </div>
+                        </li>
+                    </ul>
+                </nav>
+            </aside>
+        </div>
+
+
+        <!-- Main Content -->
+        <main>
+            <div class="video-grid" id="videoInput">
+                <!-- Inject js here -->
+            </div>
+        </main>
+    </div>
+
+    <hr>
+
+    <!-- Footer -->
+    <footer>
+        <p>© <span id="year"></span> YouTube Clone Project</p>
+    </footer>
+</body>
+
+</html>
