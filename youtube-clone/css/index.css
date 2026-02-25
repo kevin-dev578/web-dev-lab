@@ -56,6 +56,10 @@
     .search-bar{
         display: flex;
         justify-content: center;
+        position: relative;
+        align-items: center;
+        max-width: 500px;
+        margin: 0 auto;
     }
 
     .header-icons button {
@@ -63,6 +67,7 @@
     }
 
     .search-bar input{
+        flex: 1;
         padding: .5rem;
         border-radius: 8px 0 0 8px;
         border: solid .5px var(--yt-light-gray);
@@ -193,6 +198,28 @@
         text-align: center;
     }
 
+    #suggestions{
+        list-style: none;
+        padding: 0;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        margin: 0;
+        background-color: var(--yt-white);
+        z-index: 1000;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    #suggestions li {
+        padding: 10px 15px;
+        cursor: pointer;
+        font-size: 15px;
+        color: var(--yt-black);
+    }
+
+    #suggestions li:hover {
+        background: var(--yt-light-gray);
+    }
     
 
 
