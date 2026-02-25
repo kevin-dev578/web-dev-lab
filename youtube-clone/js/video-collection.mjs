@@ -1,21 +1,46 @@
 const API_KEY = "AIzaSyCRTfvbFUECavwHJpIreARP3RlDAKAMoeE";
 const BASE_URL = "https://www.googleapis.com/youtube/v3/videos";
 
+let videoData = [];      
+let currentIndex = 0;    
+const batchSize = 12;     
+
 async function renderYTVids() {
+    const spinner = document.getElementById("spinner");
+    spinner.style.display = "block";
 
     try {
         const response = await fetch(
             `${BASE_URL}?part=snippet&chart=mostPopular&maxResults=50&regionCode=US&key=${API_KEY}`
         );
         const data = await response.json();
+        videoData = data.items
+        renderBatch();
 
-        console.log(response);
+        const showMore = document.getElementById("showMoreVid");
+        showMore.addEventListener("click", () => {
+            spinner.style.display = "block";
+            setTimeout(() => {
+                renderBatch(); 
+            }, 1000);
+        });
 
-        let injectdHTML = "";
+    } catch (error) {
+        const div = document.getElementById("videoInput");
+        div.innerHTML = `<p>${error}</p>`;
+    }
+}
 
-        data.items.forEach(video => {
-            injectdHTML += ` 
-            <div class="video-wrapper">
+function renderBatch() {
+    const div = document.getElementById("videoInput");
+    let injectdHTML = "";
+
+    // slice the next batch
+    const slicedVideo = videoData.slice(currentIndex, currentIndex + batchSize);
+
+    slicedVideo.forEach(video => {
+        injectdHTML += `
+        <div class="video-wrapper">
             <article class="video-card">
                 <iframe width="100%" height="200"
                 src="https://www.youtube.com/embed/${video.id}" 
@@ -23,23 +48,24 @@ async function renderYTVids() {
                 <h3>${video.snippet.title}</h3> 
                 <p>${video.snippet.channelTitle}</p> 
             </article>
-            </div>
-            `;
-        });
+        </div>
+        `;
+    });
 
-        // ✅ inject directly into the grid container
-        const div = document.getElementById("videoInput");
-        div.innerHTML = injectdHTML;
+  
+    div.insertAdjacentHTML("beforeend", injectdHTML); // beforeend goes to the end of the index and append videos there, and injectshtml there
 
+    currentIndex += batchSize;
 
-    } catch (error) {
-        const div = document.getElementById("videoInput");
-        const section = document.createElement("section");
-
-        section.innerHTML = `<p>${error}</p>`;
-        div.appendChild(section);
+    // hide button once all videos are shown
+    if (currentIndex >= videoData.length) {
+        document.getElementById("showMoreVid").style.display = "none";
+        const spinner = document.getElementById("spinner");
     }
 
+   
+    const spinner = document.getElementById("spinner");
+    spinner.style.display = "none";
 }
 
-export {renderYTVids};
+export { renderYTVids };

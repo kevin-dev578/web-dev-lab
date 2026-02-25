@@ -1,5 +1,6 @@
 import { renderYTVids } from "./video-collection.mjs";
 import { searchVideos } from "./search.mjs";
+import { footer } from "./footer.mjs";
 
 renderYTVids();
 
@@ -22,3 +23,5 @@ searchInput.addEventListener("keypress", (e) => {
         }
     }
 });
+
+footer();

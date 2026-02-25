@@ -24,6 +24,7 @@
         </div>
         <div class="search-bar">
             <input type="text" placeholder="Search" id="searchInput">
+            <ul id="suggestions"></ul> <!-- Added suggestions-->
             <button aria-label="Search" title="Search" id="searchBtn"><img src="./images/search-svgrepo-com.svg" alt="a search button"
                     width="30" height="30"></button>
         </div>
@@ -96,6 +97,8 @@
             <div class="video-grid" id="videoInput">
                 <!-- Inject js here -->
             </div>
+            <button id="showMoreVid" class="showMoreVid">Show more</button>
+            <div id="spinner" class="spinner"></div>
         </main>
     </div>
 
@@ -103,7 +106,7 @@
 
     <!-- Footer -->
     <footer>
-        <p>© <span id="year"></span> YouTube Clone Project</p>
+        <p>© <span id="year"></span> | YouTube Clone Project | Kevin Mbemba</p>
     </footer>
 </body>
 
